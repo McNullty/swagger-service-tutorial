@@ -30,7 +30,7 @@
                     :return       User
                     :path-params [id :- String]
                     :summary      "returns the user with a given id"
-                    (ok (db/get-users {:id id} (:db config))))
+                    (ok (first (db/get-user {:id id} (:db config)))))
 
               (POST* "/authenticate" []
                      :return      Boolean
